@@ -1,8 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react"
-import HomeView from "./Home";
-import AddNewTodo from "./AddNew";
+import HomeView from "./Views/Home";
+import AddNewTodo from "./Views/AddNew";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,18 +12,18 @@ const Navigate = ({
 }: NavigateProps ) => {
   return (
     <>
-      {/* <NavigationContainer>
-        <Stack.Navigator>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="Home"
             component={HomeView}
           />
           <Stack.Screen
-            name="New Todo"
+            name="AddNew"
             component={AddNewTodo}
           />
         </Stack.Navigator>
-      </NavigationContainer> */}
+      </NavigationContainer>
     </>
   )
 };

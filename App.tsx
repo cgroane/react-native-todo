@@ -1,18 +1,22 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import Navigate from './Navigate';
+import { Provider } from 'react-redux'
+import store from './store';
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-          <StatusBar style="auto" />
-          {/* <input type='checkbox' >checkbox</input> */}
-        </View>
-        );
+    <>
+    <Provider store={store} >
+      <Navigate/>
+    </Provider>
+    </>
+  );
 }
 
 const styles = StyleSheet.create({
