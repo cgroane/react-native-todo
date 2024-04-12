@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Alert, GestureResponderEvent, Pressable, SafeAreaView, Text, TextInput, View } from "react-native";
+import { GestureResponderEvent, Pressable, TextInput, View } from "react-native";
 import { useAppDispatch } from "../../hooks/redux";
 import { add, selectTodos } from "../../reducers/todos";
 import { useSelector } from 'react-redux'
@@ -16,7 +16,6 @@ const AddNewTodo = ({
 
   const todos = useSelector(selectTodos)
   const submit = (event: GestureResponderEvent) => {
-    // todo redux or some other state management
     event.preventDefault();
     dispatch(add({
       value: newTodo,

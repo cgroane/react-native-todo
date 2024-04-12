@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { ScrollView, Text, ViewProps, FlatList, ListRenderItemInfo, Button, View, SafeAreaView, Pressable } from "react-native";
+import { ScrollView, FlatList, View, Pressable } from "react-native";
 import { Todo } from "../../types/todo";
 import { TextInput } from "react-native-gesture-handler";
 import TodoComponent from "./Todo";
@@ -42,16 +42,16 @@ const HomeView = ({
       <View style={styles.container}>
 
         <TextInput style={styles.textInput} onChangeText={val => setFilter(val)} />
-        <View style={{ backgroundColor: '#E4DFDA' }} >
-        {!todos?.length ? <View style={{ padding: 4, }} >
+        <View style={{ backgroundColor: '#E4DFDA', flex: 1 }} >
+        {!todos?.length ? <View style={{ padding: 4 }} >
           <TextComponent text="You have nothing to do today" styleOption="todoText" />
           </View> : (
           <>
-          <SafeAreaView>
+          <ScrollView>
             <FlatList data={filteredTodos}
             renderItem={(t) => <TodoComponent todo={t.item} />}
             />
-            </SafeAreaView>
+            </ScrollView>
           </>
           
         )}
