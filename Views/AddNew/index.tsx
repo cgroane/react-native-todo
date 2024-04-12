@@ -4,6 +4,8 @@ import { useAppDispatch } from "../../hooks/redux";
 import { add, selectTodos } from "../../reducers/todos";
 import { useSelector } from 'react-redux'
 import { inputStyles } from "./styles";
+import { styles } from "../Home/styles";
+import TextComponent from "../../StyledComponents/Text";
 
 interface AddNewTodoProps {}
 const AddNewTodo = ({
@@ -28,7 +30,9 @@ const AddNewTodo = ({
     <>
       <View>
         <TextInput value={newTodo} style={inputStyles.textField} onChangeText={text => setNewTodo(text)}/>
-        <Pressable onPress={submit}><Text>Add</Text></Pressable>
+        <Pressable style={styles.pressable} onPress={submit}>
+          <TextComponent styleOption="buttonText" text="Add" />
+        </Pressable>
       </View>
     </>
   )
