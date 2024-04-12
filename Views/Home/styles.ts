@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
   },
   textInput: {
     borderWidth: 1,
-    margin: 3
+    marginVertical: 5
   },
   pressable: {
     borderRadius: 4,

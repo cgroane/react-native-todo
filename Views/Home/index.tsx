@@ -43,7 +43,9 @@ const HomeView = ({
 
         <TextInput style={styles.textInput} onChangeText={val => setFilter(val)} />
         <View style={{ backgroundColor: '#E4DFDA' }} >
-        {!todos?.length ? <TextComponent text="You have nothing to do today" styleOption="todoText" /> : (
+        {!todos?.length ? <View style={{ padding: 4, }} >
+          <TextComponent text="You have nothing to do today" styleOption="todoText" />
+          </View> : (
           <>
           <SafeAreaView>
             <FlatList data={filteredTodos}
